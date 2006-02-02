@@ -13,12 +13,12 @@ can use to assign new subjects to their treatment.
 \tabular{ll}{
 Package: \tab blockrand\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2006-01-02\cr
+Version: \tab 1.1\cr
+Date: \tab 2008-02-02\cr
 License: \tab Gnu Public License Ver. 2\cr
 Copyright: \tab Greg Snow and Intermountain Healthcare\cr
 }
-Currently their are 2 main functions and an optional list.  The
+Currently there are 2 main functions and an optional list.  The
 \code{blockrand} function is used to create a data frame with the block
 sequential treatment randomizations.  When doing a stratified study you
 should run \code{blockrand} once for each stratum then optionally
@@ -38,9 +38,9 @@ run \code{plot.blockrand} without specifying these arguments, then the
 element of the blockrand.text list will be used instead.
 }
 \author{
-Greg Snow \email{greg.snow@intermountainmail.org}
+Greg Snow \email{greg.snow@imail.org}
 
-Maintainer: Greg Snow \email{greg.snow@intermountainmail.org}
+Maintainer: Greg Snow \email{greg.snow@imail.org}
 }
 \keyword{ package }
 

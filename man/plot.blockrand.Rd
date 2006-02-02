@@ -46,7 +46,7 @@ middle.vo, bottom.ho, bottom.vo, ...)
   \item{\dots}{ Optional arguments passed to \code{pdf} }
 }
 \details{
-  
+
   This function creates a pdf file with randomization "cards".  It puts
   4 cards per page.  You can either print the file onto perforated cards
   (Avery 8387) or onto regular paper then cut the cards apart.  The top
@@ -84,13 +84,13 @@ vectors or lists.  If the vectors
   these vectors should be the same length as the "text" vector and
   represent the fonts and colors to use for the corresponding lines of
   text (for example if \code{font} is \code{c(1,2,1)} then the 2nd line
-  will be printed bold). 
+  will be printed bold).
 
-  If the template in \code{top} or \code{middle} contains "%ID%" (not
+  If the template in \code{top} or \code{middle} contains "\%ID\%" (not
   including the quotes, but including the percent signs) then this
   string will be replaced with the contents of the ID column for each
-  card.  If they contain "%STRAT%" then it will be replaced with the
-  contents of the stratum column.  If \code{top} contains "%TREAT%" then
+  card.  If they contain "\%STRAT\%" then it will be replaced with the
+  contents of the stratum column.  If \code{top} contains "\%TREAT\%" then
   it will be replaced with the contents of the treatment column (note
   that this is not available in the \code{middle} template).
 
@@ -131,7 +131,7 @@ This function does not return anything useful, it is run for the side
 effect of creating a pdf file.  The pdf file will have 4 cards per page
 and 1 card for each line of \code{x}.
 }
-\author{Greg Snow \email{greg.snow@intermountainmail.org }}
+\author{Greg Snow \email{greg.snow@imail.org }}
 \examples{
 ## stratified by sex, 100 in stratum, 2 treatments
 male <- blockrand(n=100, id.prefix='M', block.prefix='M',stratum='Male')
