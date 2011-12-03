@@ -47,10 +47,10 @@ uneq.beg=FALSE, uneq.mid=FALSE, uneq.min=0, uneq.maxit=10)
 
   If \code{id.prefix} is not specified then the id column of the output
   will be a sequence of integers from 1 to the number of rows.  If
-  \code{id.prefix} is numeric then this number will be added to the set
-  of integers.  If \code{id.prefix} is a character string then the
-  numbers will be converted to strings (zero padded) and have the prefix
-  prepended.
+  \code{id.prefix} is numeric then the id column of the output will be a
+  sequence of integers starting at the value of \code{id.prefix}.  If
+  \code{id.prefix} is a character string then the numbers will be
+  converted to strings (zero padded) and have the prefix prepended.
 
   The \code{block.prefix} will be treated in the same way as the
   \code{id.prefix} for identifying the blocks.  The one difference being

@@ -4,7 +4,7 @@ function(x, file='blockrand.pdf', top, middle, bottom,
                            id.col='id',stratum.col='stratum',
                            treat.col='treatment', cut.marks=FALSE,
                            top.ho,top.vo,middle.ho,middle.vo,
-                           bottom.ho,bottom.vo,
+                           bottom.ho,bottom.vo, nrow=2, ncol=2,
                            ...) {
 
   pdf(file,width=width,height=height,...)
@@ -13,9 +13,9 @@ function(x, file='blockrand.pdf', top, middle, bottom,
   if(!missing(par.args)){
     par(par.args)
   }
-  par(mfrow=c(2,2),mar=c(0,0,0,0),xaxs='i',yaxs='i')
+  par(mfrow=c(nrow,ncol),mar=c(0,0,0,0),xaxs='i',yaxs='i')
   cur.par <- par()
-  
+
   if(missing(top)){
     if(exists('blockrand.text',mode='list')){
       top <- blockrand.text$top
@@ -72,7 +72,7 @@ function(x, file='blockrand.pdf', top, middle, bottom,
     b.fnt <- cur.par$font
   }
 
-  
+
   if(missing(top.ho)){
     if(exists('blockrand.text',mode='list') && length(blockrand.text$top.ho)){
       top.ho <- blockrand.text$top.ho
@@ -121,18 +121,18 @@ function(x, file='blockrand.pdf', top, middle, bottom,
     }
   }
 
-  
 
-  
+
+
 
   id <- x[[id.col]]
   if (is.null(id)) id <- seq(length.out=nrow(x))
   id <- as.character(id)
-  
+
   stratum <- x[[stratum.col]]
   if (is.null(stratum)) stratum <- rep('',nrow(x))
   stratum <- as.character(stratum)
-  
+
   treat <- x[[treat.col]]
   if (is.null(treat)) stop("Cannot proceed without valid treatment column")
   treat <- as.character(treat)
@@ -141,7 +141,7 @@ function(x, file='blockrand.pdf', top, middle, bottom,
   sh <- strheight("ABCjglw")*1.5*1.3
   sw <- strwidth("W")*1.3
   par(new=T)
-  
+
   for (i in seq(along=id) ) {
     t.text2 <- gsub('%ID%',id[i],t.text)
     t.text2 <- gsub('%TREAT%',treat[i], t.text2)
@@ -153,7 +153,7 @@ function(x, file='blockrand.pdf', top, middle, bottom,
     plot.new()
 #axis(1,at=seq(0,1,.1),line=-10)
 #axis(2,at=seq(0,1,.1),line=-10)
-    
+
     text(0.15+sw*top.ho, 0.85+sh*top.vo - seq(0,length=length(t.text2))*sh,
          t.text2, col=t.col, font=t.fnt,adj=c(0,0.5),cex=1.3)
 
@@ -172,7 +172,7 @@ function(x, file='blockrand.pdf', top, middle, bottom,
   }
 
 
-  
+
   return(invisible(NULL))
 }
 
