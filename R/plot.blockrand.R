@@ -1,5 +1,5 @@
-"plot.blockrand" <-
-function(x, file='blockrand.pdf', top, middle, bottom,
+"plotblockrand" <-
+function(x, file='blockrand.pdf', top, middle, bottom, blockrand.text,
                            width=11,height=8.5,par.args,
                            id.col='id',stratum.col='stratum',
                            treat.col='treatment', cut.marks=FALSE,
@@ -17,7 +17,7 @@ function(x, file='blockrand.pdf', top, middle, bottom,
   cur.par <- par()
 
   if(missing(top)){
-    if(exists('blockrand.text',mode='list')){
+    if(!missing(blockrand.text)) {
       top <- blockrand.text$top
     } else {
       top <- character(0)
@@ -36,7 +36,7 @@ function(x, file='blockrand.pdf', top, middle, bottom,
 
 
   if(missing(middle)){
-    if(exists('blockrand.text',mode='list')){
+    if(!missing(blockrand.text)) {
       middle <- blockrand.text$middle
     } else {
       middle <- character(0)
@@ -55,7 +55,7 @@ function(x, file='blockrand.pdf', top, middle, bottom,
 
 
   if(missing(bottom)){
-    if(exists('blockrand.text',mode='list')){
+    if(!missing(blockrand.text)) {
       bottom <- blockrand.text$bottom
     } else {
       bottom <- character(0)
@@ -74,7 +74,7 @@ function(x, file='blockrand.pdf', top, middle, bottom,
 
 
   if(missing(top.ho)){
-    if(exists('blockrand.text',mode='list') && length(blockrand.text$top.ho)){
+    if(!missing(blockrand.text) && length(blockrand.text$top.ho)){
       top.ho <- blockrand.text$top.ho
     } else {
       top.ho <- 0
@@ -82,7 +82,7 @@ function(x, file='blockrand.pdf', top, middle, bottom,
   }
 
   if(missing(top.vo)){
-    if(exists('blockrand.text',mode='list') && length(blockrand.text$top.vo)){
+    if(!missing(blockrand.text) && length(blockrand.text$top.vo)){
       top.vo <- blockrand.text$top.vo
     } else {
       top.vo <- 0
@@ -90,7 +90,7 @@ function(x, file='blockrand.pdf', top, middle, bottom,
   }
 
   if(missing(middle.ho)){
-    if(exists('blockrand.text',mode='list') && length(blockrand.text$middle.ho)){
+    if(!missing(blockrand.text) && length(blockrand.text$middle.ho)){
       middle.ho <- blockrand.text$middle.ho
     } else {
       middle.ho <- 0
@@ -98,7 +98,7 @@ function(x, file='blockrand.pdf', top, middle, bottom,
   }
 
   if(missing(middle.vo)){
-    if(exists('blockrand.text',mode='list') && length(blockrand.text$middle.vo)){
+    if(!missing(blockrand.text) && length(blockrand.text$middle.vo)){
       middle.vo <- blockrand.text$middle.vo
     } else {
       middle.vo <- 0
@@ -106,7 +106,7 @@ function(x, file='blockrand.pdf', top, middle, bottom,
   }
 
   if(missing(bottom.ho)){
-    if(exists('blockrand.text',mode='list') && length(blockrand.text$bottom.ho)){
+    if(!missing(blockrand.text) && length(blockrand.text$bottom.ho)){
       bottom.ho <- blockrand.text$bottom.ho
     } else {
       bottom.ho <- 0
@@ -114,7 +114,7 @@ function(x, file='blockrand.pdf', top, middle, bottom,
   }
 
   if(missing(bottom.vo)){
-    if(exists('blockrand.text',mode='list') && length(blockrand.text$bottom.vo)){
+    if(!missing(blockrand.text) && length(blockrand.text$bottom.vo)){
       bottom.vo <- blockrand.text$bottom.vo
     } else {
       bottom.vo <- 0

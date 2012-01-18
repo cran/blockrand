@@ -1,5 +1,5 @@
-\name{plot.blockrand}
-\alias{plot.blockrand}
+\name{plotblockrand}
+\alias{plotblockrand}
 
 \title{ Create a pdf file of randomization cards }
 \description{
@@ -8,8 +8,9 @@
   envelopes for use by a study coordinator for assigning subjects to treatment.
 }
 \usage{
-plot.blockrand(x, file = "blockrand.pdf", top, middle, bottom, width =
-11, height = 8.5, par.args, id.col = "id", stratum.col = "stratum",
+plotblockrand(x, file = "blockrand.pdf", top, middle, bottom,
+blockrand.text, width = 11, height = 8.5, par.args, id.col = "id",
+stratum.col = "stratum",
 treat.col = "treatment", cut.marks = FALSE, top.ho, top.vo, middle.ho,
 middle.vo, bottom.ho, bottom.vo, nrow=2, ncol=2, ...)
 }
@@ -25,6 +26,7 @@ middle.vo, bottom.ho, bottom.vo, nrow=2, ncol=2, ...)
     visible through the window of an envelope) }
   \item{bottom}{ A single character string to be printed at the bottom
     of each card }
+  \item{blockrand.text}{A list with default values to use for other options}
   \item{width}{ Passed to \code{pdf} }
   \item{height}{ Passed to \code{pdf} }
   \item{par.args}{ A list containing additional arguments to \code{par}
@@ -97,12 +99,12 @@ vectors or lists.  If the vectors
   that this is not available in the \code{middle} template).
 
   If any of the arguments \code{top}, \code{middle}, or \code{bottom}
-  are missing then the function will look for a list named
-  "blockrand.text" and will look for the corresponding elements of that
-  list to use as the template.  If the list does not exist, or the list
-  does not have a corresponding element, then that portion of the card
-  will be blank.  Specifying the argument when calling the function will
-  override the "blockrand.text" list.
+  are missing then the function will look for a corresponding element in
+  the \code{blockrand.text} argument (a list) to use as the template.
+  If the list does not exist, or the list does not have a corresponding
+  element, then that portion of the card will be blank.  Specifying the
+  argument when calling the function will override the \code{blockrand.text}
+  list.
 
   The arguments \code{top.ho}, \code{middle.ho}, and \code{bottom.ho}
   move the corresponding parts to the right (left if negative).  The
@@ -121,7 +123,8 @@ vectors or lists.  If the vectors
   your system (the default positions work for me, but you may want to
   tweak things for your system) including templates that are commonly
   used in your institution.  Individual pieces can then be overridden
-  with the function arguments.
+  with the function arguments.  You can have a list saved with your
+  defaults and pass that list to the \code{blockrand.text} argument.
 }
 \note{
   Adobe Acrobat (and possibly other pdf viewers) will often try to
@@ -142,7 +145,7 @@ female <- blockrand(n=100, id.prefix='F', block.prefix='F',stratum='Female')
 my.study <- rbind(male,female)
 
 \dontrun{
-plot.blockrand(my.study,'mystudy.pdf',
+plotblockrand(my.study,'mystudy.pdf',
    top=list(text=c('My Study','Patient: \%ID\%','Treatment: \%TREAT\%'),
             col=c('black','black','red'),font=c(1,1,4)),
    middle=list(text=c("My Study","Sex: \%STRAT\%","Patient: \%ID\%"),
@@ -152,14 +155,15 @@ plot.blockrand(my.study,'mystudy.pdf',
 
 ### or
 
-blockrand.text <- list(
+my.blockrand.text <- list(
    top=list(text=c('My Study','Patient: \%ID\%','Treatment: \%TREAT\%'),
             col=c('black','black','red'),font=c(1,1,4)),
    middle=list(text=c("My Study","Sex: \%STRAT\%","Patient: \%ID\%"),
                col=c('black','blue','green'),font=c(1,2,3)),
    bottom="Call 123-4567 to report patient entry")
 
-plot.blockrand(my.study, 'mystudy.pdf', cut.marks=TRUE)
+plotblockrand(my.study, 'mystudy.pdf', blockrand.text=my.blockrand.text,
+     cut.marks=TRUE)
 }
 }
 \keyword{ design }% at least one, from doc/KEYWORDS

@@ -85,7 +85,7 @@ A data frame with the following columns:
   randomized trials: guarding against guessing, The Lancet, 359, pp
   966--970. }
 \author{ Greg Snow \email{greg.snow@imail.org}}
-\seealso{ \code{\link{plot.blockrand}}, \code{sample}, \code{rbind} }
+\seealso{ \code{\link{plotblockrand}}, \code{sample}, \code{rbind} }
 \examples{
 
 ## stratified by sex, 100 in stratum, 2 treatments
@@ -95,7 +95,7 @@ female <- blockrand(n=100, id.prefix='F', block.prefix='F',stratum='Female')
 my.study <- rbind(male,female)
 
 \dontrun{
-plot.blockrand(my.study,'mystudy.pdf',
+plotblockrand(my.study,'mystudy.pdf',
    top=list(text=c('My Study','Patient: \%ID\%','Treatment: \%TREAT\%'),
             col=c('black','black','red'),font=c(1,1,4)),
    middle=list(text=c("My Study","Sex: \%STRAT\%","Patient: \%ID\%"),
