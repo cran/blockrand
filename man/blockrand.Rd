@@ -84,7 +84,7 @@ A data frame with the following columns:
 \references{Schulz, K. and Grimes, D. (2002): Unequal group sizes in
   randomized trials: guarding against guessing, The Lancet, 359, pp
   966--970. }
-\author{ Greg Snow \email{greg.snow@imail.org}}
+\author{ Greg Snow \email{538280@gmail.com}}
 \seealso{ \code{\link{plotblockrand}}, \code{sample}, \code{rbind} }
 \examples{
 

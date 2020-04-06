@@ -136,7 +136,7 @@ This function does not return anything useful, it is run for the side
 effect of creating a pdf file.  The pdf file will have 4 cards per page
 and 1 card for each line of \code{x}.
 }
-\author{Greg Snow \email{greg.snow@imail.org }}
+\author{Greg Snow \email{538280@gmail.com }}
 \examples{
 ## stratified by sex, 100 in stratum, 2 treatments
 male <- blockrand(n=100, id.prefix='M', block.prefix='M',stratum='Male')

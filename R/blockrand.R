@@ -27,7 +27,11 @@ function(n, num.levels=2, levels=LETTERS[seq(length=num.levels)],
             if( length(treat) > n/2 ) { uneq.mid <- FALSE }
         }
 
-        block.n <- sample(block.sizes,1)
+        block.n <- if(length(block.sizes) > 1 ) {
+            sample(block.sizes,1)
+        } else {
+            block.sizes
+        }
         tmp <- rep(levels,block.n)
         n2 <- length(tmp)
 

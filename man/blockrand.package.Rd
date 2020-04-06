@@ -38,9 +38,9 @@ run \code{plotblockrand} without specifying these arguments, then the
 element of the blockrand.text list will be used instead.
 }
 \author{
-Greg Snow \email{greg.snow@imail.org}
+Greg Snow \email{538280@gmail.com}
 
-Maintainer: Greg Snow \email{greg.snow@imail.org}
+Maintainer: Greg Snow \email{538280@gmail.com}
 }
 \keyword{ package }
 

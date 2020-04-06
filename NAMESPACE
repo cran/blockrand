@@ -1,1 +1,5 @@
 export(blockrand, plotblockrand)
+importFrom("grDevices", "dev.off", "pdf")
+importFrom("graphics", "lines", "par", "plot.new", "strheight",
+           "strwidth", "text")
+  

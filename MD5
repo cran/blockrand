@@ -1,7 +1,7 @@
-c5556584522219ce096d9fd9760c04ab *DESCRIPTION
-57a61660f29a2d5105dd54bdd571ce2a *NAMESPACE
-1da59fa53dbb57acb71f34b3185a0c53 *R/blockrand.R
+c960b577b5cf0bd15073dd9c246814ac *DESCRIPTION
+912ad4a5984357f5e821d761567440ce *NAMESPACE
+69dd9b206b71c899781c9a84a031e8ed *R/blockrand.R
 fd4629a4429a6b567fef808cd28c96e7 *R/plot.blockrand.R
-eaa60546319273c4c24cae23b30a6823 *man/blockrand.Rd
-2a0139ed41cd5e3f56d957bb73818411 *man/blockrand.package.Rd
-40f35d95ab203d5a6647108174c61685 *man/plot.blockrand.Rd
+85920b18696754bc6141d6946efbbe56 *man/blockrand.Rd
+2617993c29bb409b3bbefe2c237ca003 *man/blockrand.package.Rd
+64d76b5291f06485cc4903d785cba631 *man/plot.blockrand.Rd
